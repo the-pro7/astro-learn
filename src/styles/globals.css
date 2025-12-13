@@ -29,5 +29,6 @@ h1 {
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 600;
+    margin-bottom: 4em;
 
 }
