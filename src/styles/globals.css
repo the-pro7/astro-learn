@@ -33,6 +33,20 @@ h1 {
 
 }
 
+.menu {
+  background-color: #0d0950;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+:has(.menu[aria-expanded="true"]) .nav-links {
+  display: unset;
+}
+
 
 .nav-links {
   width: 100%;
@@ -68,5 +82,9 @@ h1 {
   .nav-links a {
     display: inline-block;
     padding: 15px 20px;
+  }
+
+    .menu {
+    display: none;
   }
 }
