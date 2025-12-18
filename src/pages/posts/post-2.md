@@ -1,4 +1,5 @@
 ---
+layout: '../../layouts/MarkdownPostLayout.astro'
 title: 'My Second Post'
 pubDate: '2025-12-12'
 author: 'Emmanuel Ameyaw'
