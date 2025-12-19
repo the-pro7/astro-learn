@@ -1,5 +1,4 @@
 ---
-import Footer from "../components/Footer.astro";
 import BaseLayout from "./BaseLayout.astro";
 
 const { frontmatter } = Astro.props;
@@ -9,6 +8,9 @@ const { frontmatter } = Astro.props;
   <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
   <p>Written by: {frontmatter.author}</p>
   <p><em>{frontmatter.description}</em></p>
+  <ul class="list-none flex gap-2 my-5">
+    {frontmatter?.tags.map((tag: string) => <li><a class="bg-rose-500 text-white px-4 py-2 rounded-sm" href={`/tags/${tag}`}>{tag}</a></li>)}
+  </ul>
   <img src={frontmatter.image.url} width="700" alt={frontmatter.image.alt} />
   <slot />
 </BaseLayout>
