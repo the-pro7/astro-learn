@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
+
+const tags: string[] = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())]
+
+---
+
+<BaseLayout pageTitle="Tag Index">
+    <p>Showing all tags from our db</p>
+    <ul class="list-disc flex flex-col gap-2">
+        {tags.map(tag => <li><a class="text-purple-500 underline hover:text-purple-700 visited:text-purple-700" href={`/tags/${tag}`}>{tag}</a></li>)}
+    </ul>
+</BaseLayout>
